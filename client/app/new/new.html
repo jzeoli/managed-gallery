@@ -1,0 +1,76 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Create A New Project</h1>
+  </div>
+</header>
+
+
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Basic Info</h2>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Project Name" ng-model="form.name">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Client" ng-model="form.client">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Date" ng-model="form.date">
+                        </div>
+
+
+                        <div class="input-group">
+                            <label>Short Description</label>
+                            <textarea class="form-control" placeholder="" ng-model="form.short_info"></textarea>
+                        </div>
+
+
+                        
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <h2>Main Image</h2>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="false" ngf-allow-dir="true" accept="image/*,application/pdf" name="test">Drop pdfs or images here or click to upload</div>
+                                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+                            </div>
+                            <div class="col-lg-6">
+                                <span style="font-size:.9em; font-weight:300;"><em>Preview:</em></span>
+                                <img ng-src="{{mainimage}}" class="img-preview">
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <button class="btn btn-success" ng-click="saveProject(form)" style="float:right; margin-top:20px;">Create Project</button>
+                    
+                </div>
+
+
+
+
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
